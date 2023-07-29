@@ -2,18 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Checkout Code') {
             steps {
-                echo 'Hello World'
-                sh 'pwd'
+                Checkout SCM
             }
         }
         stage('Build Code'){
             steps {
-                echo 'Build'
+                echo 'Building Code'
+                script {
+                    build_code()
+                }
             }
 
         }
     }
+}
 
+void build_code() {
+    sh """
+    echo "workspace"
+    echo $workspace
 }
