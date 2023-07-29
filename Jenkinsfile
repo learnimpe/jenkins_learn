@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    options {
+        skipDefaultCheckout(true)
+    }
     stages {
         stage('Checkout Code') {
             steps {
@@ -22,6 +24,6 @@ pipeline {
 void build_code() {
     sh """
     echo 'workspace'
-    echo $workspace
+    echo ${WORKSPACE}
     """
 }
