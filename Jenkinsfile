@@ -21,6 +21,7 @@ pipeline {
 
 void build_code() {
     sh """
-    echo "workspace"
+    echo 'workspace'
     echo $workspace
+    """
 }
