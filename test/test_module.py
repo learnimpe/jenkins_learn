@@ -7,4 +7,4 @@ def test_learn():
 
 
 def test_Ll():
-    assert 1==1
+    assert Learn(3, 2).fun() == 5
